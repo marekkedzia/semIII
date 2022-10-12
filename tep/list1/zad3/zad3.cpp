@@ -11,7 +11,9 @@ bool b_dealloc_table_2_dim(int **tablePointer, int sizeX, int sizeY) { //redunda
 
     tablePointer = new int *[sizeX];
     for (int i = 0; i < sizeX; i++)
-        delete tablePointer[i];
+        delete[] tablePointer[i];
+
+    delete[] tablePointer;
 
     return true;
 }

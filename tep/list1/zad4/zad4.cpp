@@ -51,12 +51,22 @@ public:
             return false;
         }
         size = userTableSize;
-        table = new int [userTableSize];
+        table = new int[userTableSize];
         return true;
     }
 
-    Table *pcClone() {
-        return new Table(*this);
+//    Table *clone() {
+//        return new Table(*this);
+//    }
+    Table *clone() {
+        return new Table(name, size);
     }
-
 };
+
+void modTab(Table *tableToModify, int size) {
+    tableToModify->setSize(size);
+}
+
+void modTab(Table tableToModify, int size) {
+    tableToModify.setSize(size);
+}
