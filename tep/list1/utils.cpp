@@ -1,10 +1,5 @@
 #include "utils.h"
 #include <iostream>
-
-void setValue(int *pointer, int value) {
-    *pointer = value;
-}
-
 bool isCorrectSize(int size) {
     return size >= 0;
 }

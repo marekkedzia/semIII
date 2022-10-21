@@ -1,6 +1,3 @@
-//
-// Created by marek on 08.10.2022.
-//
 #include <iostream>
 
 #ifndef TEP_ZAD4_H
@@ -13,6 +10,6 @@ const std::string INCORRECT_SIZE_MESSAGE = "Field size must be a positive intege
 const std::string PARAMETER = "parameter";
 const std::string COPY_SUFFIX = "_copy";
 const std::string COPY = "Copy";
-const std::string DELETE = "Deleting";
+const std::string DELETE = "Delete";
 const std::string CHANGE_SIZE_ERROR = "Cannot change size";
 #endif //TEP_ZAD4_H

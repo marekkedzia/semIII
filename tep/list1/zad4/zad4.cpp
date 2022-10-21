@@ -13,8 +13,9 @@ private:
 
 public:
     Table() {
-        this->name = DEFAULT_TABLE_NAME;
-        this->size = DEFAULT_TABLE_SIZE;
+        name = DEFAULT_TABLE_NAME;
+        size = DEFAULT_TABLE_SIZE;
+        table = new int[size];
         printActionLog(PARAMETER_FREE, name);
     };
 
@@ -38,6 +39,7 @@ public:
     }
 
     ~Table() {
+        delete[] table;
         printActionLog(DELETE, name);
     }
 
@@ -55,9 +57,6 @@ public:
         return true;
     }
 
-//    Table *clone() {
-//        return new Table(*this);
-//    }
     Table *clone() {
         return new Table(name, size);
     }
@@ -67,6 +66,18 @@ void modTab(Table *tableToModify, int size) {
     tableToModify->setSize(size);
 }
 
-void modTab(Table tableToModify, int size) {
+void modTab(Table tableToModify, int size) { //works
     tableToModify.setSize(size);
 }
+
+//int main() {
+//    Table *table1 = new Table();
+//    Table *table2 = new Table("name2", 4);
+//    Table *table3 = new Table("name3", 5);
+//    Table *table4 = new Table("name3", -5);
+//       Table *table = new Table("name3", 6);
+//    modTab(table, 1);
+//    cout << table->size<<std::endl;
+//    modTab(*table, 1);
+//    cout << table->size;
+//}
