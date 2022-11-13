@@ -3,21 +3,21 @@ project(tep)
 
 set(CMAKE_CXX_STANDARD 98)
 
-include_directories(list1)
-include_directories(list1/zad1)
-include_directories(list1/zad2)
-include_directories(list1/zad3)
-include_directories(list1/zad4)
+include_directories(.)
+include_directories(zad1)
+include_directories(zad2)
+include_directories(zad3)
+include_directories(zad4)
 
 add_executable(tep
-        list1/zad1/zad1.cpp
-        list1/zad1/zad1.h
-        list1/zad2/zad2.cpp
-        list1/zad2/zad2.h
-        list1/zad3/zad3.cpp
-        list1/zad3/zad3.h
-        list1/utils.cpp
-        list1/utils.h
-        list1/zad4/zad4.h
-        list1/zad4/zad4.cpp
+        zad1/zad1.cpp
+        zad1/zad1.h
+        zad2/zad2.cpp
+        zad2/zad2.h
+        zad3/zad3.cpp
+        zad3/zad3.h
+        utils.cpp
+        utils.h
+        zad4/zad4.h
+        zad4/zad4.cpp
         )

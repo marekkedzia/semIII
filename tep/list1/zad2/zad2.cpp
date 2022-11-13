@@ -1,6 +1,6 @@
 #include <iostream>
 #include "utils.h"
-#include "zad1.h"
+#include "zad2.1.h"
 
 using std::cout;
 using std::endl;
