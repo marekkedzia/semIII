@@ -3,9 +3,9 @@ let appSecretKey = 2137;;
 type reward = BoolOfTruth of bool * string | Money of int * string | Item of string | NotProvidedYet of (unit->reward)  | Nothing;;
 type table = Table of  reward list;;
 
-let provideReward = function 1 -> BoolOfTruth(true, "Is winter coming?") | 2 -> Money(1500, "$") | 3 -> Item("Watch") | _ -> Nothing;;
+let calculateTicketToken = function() -> (appSecretKey + Random.int 100)  mod 5;;
 
-let calculateTicketToken = function() -> (appSecretKey + Random.int 100)  mod 4;;
+let rec provideReward = function 1 -> BoolOfTruth(true, "Is winter coming?") | 2 -> Money(1500, "$") | 3 -> Item("Watch") | 4->NotProvidedYet(fun ()->provideReward(calculateTicketToken()))| _ -> Nothing;;
 
 (*calc test*)
 calculateTicketToken();;
