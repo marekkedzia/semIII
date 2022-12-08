@@ -1,82 +1,96 @@
-//
-// Created by marek on 11.11.2022.
-//
-
-#include "Tree.h"
+#include <iostream>
 #include <vector>
 
-using namespace std;
+using std::cout;
+using std::vector;
+using std::endl;
 
-class Tree {
-private:
-    class Node {
-    private:
-        vector<Node> children;
-        Node *parent;
-        int metadata;
-
-    public:
-        Node() {
-            metadata = 0;
-            parent = NULL;
-        };
-
-        Node(Node *customParent) {
-            parent = customParent;
-            metadata = 0;
-        };
-
-        ~Node() {
-            while (!children.empty())
-                children.pop_back();
-        };
-
-        void setMetadata(int data) { metadata = data; };
-
-        int getChildrenNumber() { return (children.size()); };
-
-        void addNewChild() {
-            Node newNode;
-            newNode.parent = this;
-            children.push_back(newNode);
-        };
-
-        Node *getChild(int position) {
-            if (position < 0 || position > children.size()) {
-                cout << INCORRECT_SIZE;
-                return NULL;
-            }
-            return &children.at(position);
-        };
-
-        void print() { cout << " " << metadata; };
-
-        void printElementsBelow() {
-            print();
-            if (!children.empty())
-                for (int i = 0; i < children.size(); i++)
-                    children.at(i).printElementsBelow();
-        };
-
-        void printElementsUp() {
-            print();
-            if (parent != NULL)
-                parent->printElementsUp();
-        };
-    };
-
-    Node root;
+class CNodeStatic {
+public:
+    vector<CNodeStatic> v_children;
+    CNodeStatic *pc_parent;
+    int i_val;
 
 public:
-    Tree();
-
-    ~Tree() {
-
+    CNodeStatic() {
+        i_val = 1;
+        pc_parent = NULL;
     };
 
-    Node *getRoot() { return (&root); }
+    ~CNodeStatic() {
+        while (!v_children.empty())
+            v_children.pop_back();
+    };
 
-    void printTree() {
-        root.printElementsBelow();
+    void vSetValue(int iVal) {
+        i_val = iVal;
+    };
+
+    void vAddNewChild() {
+        CNodeStatic newNode;
+        newNode.pc_parent = this;
+        v_children.push_back(newNode);
+    };
+
+    CNodeStatic *pcGetChild(int iIndex) {
+        if (iIndex >= v_children.size() || iIndex < 0) {
+            cout << "Index is incorrect" << endl;
+            return NULL;
+        }
+        return &v_children.at(iIndex);
+    };
+
+    void vPrint() {
+        cout << "->" << i_val;
+    };
+
+    void vPrintAllBelow() {
+        vPrint();
+        if (!v_children.empty())
+            for (int i = 0; i < v_children.size(); i++)
+                v_children.at(i).vPrintAllBelow();
     };
 };
+
+class CTreeStatic {
+private:
+    CNodeStatic c_root;
+public:
+    CTreeStatic() {
+        c_root = CNodeStatic();
+    };
+
+    ~CTreeStatic() {
+        delete &c_root;
+    };
+
+    CNodeStatic *pcGetRoot() {
+        return &c_root;
+    }
+
+    void vPrintNodesBelow(CNodeStatic *node) {
+        node->vPrintAllBelow();
+    }
+
+};
+
+int main() {
+    CTreeStatic *n2 = new CTreeStatic();
+    n2->pcGetRoot()->vAddNewChild();
+    n2->pcGetRoot()->vAddNewChild();
+    n2->pcGetRoot()->vAddNewChild();
+    n2->pcGetRoot()->pcGetChild(0)->vSetValue(1);
+    n2->pcGetRoot()->pcGetChild(0)->vAddNewChild();
+    n2->pcGetRoot()->pcGetChild(0)->pcGetChild(0)->vSetValue(2);
+    n2->pcGetRoot()->pcGetChild(0)->vAddNewChild();
+    n2->pcGetRoot()->pcGetChild(0)->pcGetChild(1)->vSetValue(3);
+    n2->pcGetRoot()->pcGetChild(1)->vSetValue(4);
+    n2->pcGetRoot()->pcGetChild(2)->vSetValue(5);
+    n2->pcGetRoot()->pcGetChild(2)->vAddNewChild();
+    n2->pcGetRoot()->pcGetChild(2)->pcGetChild(0)->vSetValue(6);
+    n2->pcGetRoot()->vSetValue(0);
+    n2->pcGetRoot()->vPrintAllBelow();
+    cout << endl;
+    n2->vPrintNodesBelow(n2->pcGetRoot()->pcGetChild(0));
+    cout << endl;
+}

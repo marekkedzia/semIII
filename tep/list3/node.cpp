@@ -78,7 +78,7 @@ void treeTest() {
     root.getChild(0)->getChild(1)->printElementsUp();
 }
 
-int main() {
+//int main() {
 //    Node n1 = new Node();
 //    n1.addNewChild();
 //    n1.getChild(0)->setMetadata(1);
@@ -87,5 +87,5 @@ int main() {
 //    n1.getChild(0)->addNewChild();
 //    n1.getChild(0)->getChild(0)->setMetadata(2);
 //    n1.printElementsBelow();
-    treeTest();
-}
+//    treeTest();
+//}

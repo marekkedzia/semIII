@@ -3,4 +3,4 @@ project(list3)
 
 set(CMAKE_CXX_STANDARD 98)
 
-add_executable(list3 node.cpp)
+add_executable(list3 node.cpp Tree.cpp dynamic.cpp)

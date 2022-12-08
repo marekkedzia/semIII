@@ -82,4 +82,3 @@ review(ChangeCommit(1, "y"),
         Node(DeleteCommit(2),
           Node(DeleteCommit(2), Empty
           ))))))
-
