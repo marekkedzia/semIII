@@ -1,0 +1,3 @@
+C:/studia/sem3/tep/list5/cmake-build-debug/CMakeFiles/list5.dir
+C:/studia/sem3/tep/list5/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/studia/sem3/tep/list5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
