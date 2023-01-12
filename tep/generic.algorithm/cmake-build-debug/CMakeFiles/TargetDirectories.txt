@@ -1,0 +1,3 @@
+C:/studia/sem3/tep/generic.algorithm/cmake-build-debug/CMakeFiles/generic_algorithm.dir
+C:/studia/sem3/tep/generic.algorithm/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/studia/sem3/tep/generic.algorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
