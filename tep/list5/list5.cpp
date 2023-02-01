@@ -160,14 +160,18 @@ public:
 };
 
 int main(){
+    int copies = 0;
     int *pointer = new int[123];
     CMySmartPointer<int> p1(pointer);
+    copies++;
     p1.operator->()[0] = 123;
     p1.operator->()[1] = 456;
     p1.operator->()[2] = 789;
     p1.operator->()[3] = 012;
     CMySmartPointer<int> p2(p1);
+    copies++;
     CMySmartPointer<int> p3(new int[7]);
+    copies++;
     p3 = p2;
     std::cout << p2.operator->()[0] << std::endl;
     std::cout << p2.operator->()[1] << std::endl;
@@ -194,4 +198,5 @@ int main(){
     Table tab3;
     tab3 = tab1 + tab2;
     tab3.print();
+    std::cout << "Liczba utworzonych kopi: " << copies;
 }

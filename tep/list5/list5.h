@@ -69,7 +69,6 @@ void CMySmartPointer<T>::operator=(const CMySmartPointer<T> &pcOther) {
     pc_counter->iAdd();
 }
 
-//4
 const int TAB_SIZE = 12;
 
 class CTab {

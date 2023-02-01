@@ -28,7 +28,7 @@ void GeneticAlgorithm::printPopulation() {
     }
 }
 
-void GeneticAlgorithm::calculateQualityRate(const CapacityProblem &capacityProblem) {
+void GeneticAlgorithm::calculatePopulationQualityRate(const CapacityProblem &capacityProblem) {
     for (int i = 0; i < populationSize; i++)
         individuals.at(i)->calculateQualityRate(capacityProblem);
 }

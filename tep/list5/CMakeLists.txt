@@ -7,4 +7,6 @@ include_directories(.)
 
 add_executable(list5
         list5.cpp
-        list5.h)
+        list5.h
+        mod.cpp
+        mod.h)

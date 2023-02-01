@@ -18,7 +18,7 @@ private:
 
     Individual* findParent();
 
-    void calculateQualityRate(const CapacityProblem &capacityProblem);
+    void calculatePopulationQualityRate(const CapacityProblem &capacityProblem);
 
     Individual * mergeParents(int cutSpot, Individual parent1, Individual parent2);
 

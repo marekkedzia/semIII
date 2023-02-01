@@ -1,0 +1,27 @@
+object SplitterTests extends App {
+  val f1 = new Rectangle(20, 31)
+  val f2 = new Rectangle(50, 34)
+  val f3 = new Rectangle(123, 16)
+  val f4 = new Rectangle(1232, 27)
+  val f5 = new Rectangle(64, 48)
+  val f6 = new Rectangle(11, 95)
+  val f7 = new Rectangle(12)
+  val f8 = new Rectangle(23)
+  val f9 = new Rectangle(44)
+
+  val splitter = new Splitter(1267)
+  splitter(f1)
+  splitter(f2)
+  splitter(f3)
+  splitter(f4)
+  splitter(f5)
+  splitter(f6)
+  splitter(f7)
+  splitter(f8)
+  splitter(f9)
+
+  println("Small figures:")
+  splitter.printSmallFigures()
+  println("Big figures:")
+  splitter.printBigFigures()
+}

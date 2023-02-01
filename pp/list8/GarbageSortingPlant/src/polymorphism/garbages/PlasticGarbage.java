@@ -1,8 +1,8 @@
 package polymorphism.garbages;
 
 public class PlasticGarbage extends Garbage {
-    private String materialType;
-
+    private final String materialType;
+    private final double crushedVolumeInCubicMillimeter;
     public PlasticGarbage(int weightInGrams, String materialType, double crushedVolumeInCubicMillimeter) {
         super(weightInGrams);
         if (crushedVolumeInCubicMillimeter <= 0)
@@ -10,8 +10,6 @@ public class PlasticGarbage extends Garbage {
         this.materialType = materialType;
         this.crushedVolumeInCubicMillimeter = crushedVolumeInCubicMillimeter;
     }
-
-    private double crushedVolumeInCubicMillimeter;
 
     @Override
     public String toString() {

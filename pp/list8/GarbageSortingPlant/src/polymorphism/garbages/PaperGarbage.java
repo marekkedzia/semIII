@@ -1,7 +1,7 @@
 package polymorphism.garbages;
 
 public class PaperGarbage extends Garbage {
-    private int grammage;
+    private final int grammage;
 
     public PaperGarbage(int weightInGrams, int grammage) {
         super(weightInGrams);

@@ -1,7 +1,7 @@
 package polymorphism.garbages;
 
 public class GlassGarbage extends Garbage{
-    private int volumeInCubicMilliliter;
+    private final int volumeInCubicMilliliter;
 
     public GlassGarbage(int weightInGrams, int volumeInCubicMilliliter) {
         super(weightInGrams);
